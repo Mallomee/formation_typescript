@@ -10,17 +10,11 @@
  * 
   */
 
-const multiplyByTwo = array =>{
-    return array.map(el => el*2)
-};
-myArray = [2, 1, 4]
-
-multiplyByTwo(myArray)
-console.log(myArray)
+const multiplyByTwo = array => array.map(el => el*2);
 
 /**
  * Utiliser la fonction .filter sur le tableau passé en paramètre
- * retourne un nouveau tableau avec uniquement les nom qui commencent par la lettre "A"
+ * retourne un nouveau tableau avec uniquement les noms qui commencent par la lettre "A"
  * 
  * contraintes: 
  *   - Les mots clées for, while, do while sont interdits
