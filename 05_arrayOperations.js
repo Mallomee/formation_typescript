@@ -22,7 +22,8 @@ const multiplyByTwo = array => array.map(el => el*2);
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
   */
 
-const filterNameStartByA = null;
+const filterNameStartByA = array => array.filter(el => el[0] === "A");
+
 
 /**
  * Utiliser la fonction .reduce sur le tableau passé en paramètre
@@ -34,7 +35,7 @@ const filterNameStartByA = null;
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
   */
 
-const sum = null;
+const sum = array => array.reduce((a, b) => a + b);
 
 /**
  * Utiliser la fonction .find sur le tableau passé en paramètre
@@ -50,12 +51,11 @@ const sum = null;
  * retour attendu: "Foo"
  * 
  * contraintes: 
- *   - Les mots clées for, while, do while sont interdits
- *   - les mots clées function et return sont interdits
+ *   - Les mots clés for, while, do while sont interdits
+ *   - les mots clés function et return sont interdits
  *   - Vous ne pouvez pas utiliser de variable (autre que l'argument de la fonction)
   */
 
-const findUserById = null;
-
+const findUserById = (tab, id) => tab.find(el => el.id === id)?.name;
 
 module.exports = {multiplyByTwo, filterNameStartByA, sum, findUserById};
