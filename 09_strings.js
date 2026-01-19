@@ -1,5 +1,5 @@
 /**
- * utilisez les nouveau guillets ` (alt gr + 7) pour concaténer le nom et le prénom passé en paramètre
+ * utilisez les nouveaux guillemets ` (alt gr + 7) pour concaténer le nom et le prénom passé en paramètre
  * Renvoi le résultat
  *
  * exemple: "John", "Doe" => "John Doe"
@@ -9,4 +9,6 @@
  *  - ne pas utiliser la fonction concat de String
  */
 
-const concat = (nom, prenom) => `${nom} ${prenom}`;
+const concat = (nom, prenom) => `${prenom} ${nom}`;
+
+module.exports = {concat};

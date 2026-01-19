@@ -5,5 +5,6 @@
  * utilisez new Promise
  */
 
-const sleep = null;
+const sleep = async () => new Promise(resolve => setTimeout(resolve, 2000));
+
 module.exports = {sleep};

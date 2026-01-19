@@ -11,7 +11,9 @@ const {sleep} = require("./10_promise");
  *    - ne pas utiliser async await
  * 
  */
-const usingThen = null;
+const usingThen = (callback) => sleep().then(callback => callback);
+
+
 
 /**
  * Créez une fonction asynchrone qui attend 2 seconde puis execute le callback passé en paramètre
@@ -24,7 +26,7 @@ const usingThen = null;
  *   - ne pas utiliser .then
  */
 
-const usingAwait = null;
+const usingAwait = async (callback) => (await sleep().next(callback));
 
 /**
  * Créez une fonction asynchrone qui effectue un appel api vers l'url passé en paramètre
