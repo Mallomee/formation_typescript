@@ -14,6 +14,6 @@
 
 // TODO: Implémenter createPerson
 
-export function createPerson(name: any, age: any): any {
-  throw new Error("Not implemented");
+export function createPerson(name: string, age: number): [string, number] {
+    return [name, age];
 }

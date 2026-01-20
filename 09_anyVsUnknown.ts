@@ -31,9 +31,9 @@
 // TODO: Implémenter les fonctions
 
 export function processUnknown(value: unknown): number {
-  throw new Error("Not implemented");
+    return typeof value === "string" ? value.length : 0;
 }
 
-export function safeParseNumber(value: unknown): number | null {
-  throw new Error("Not implemented");
+export function safeParseNumber(value: any): number | null {
+    return !isNaN(parseInt(value)) ? parseInt(value) : null
 }

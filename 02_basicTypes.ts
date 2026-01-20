@@ -32,5 +32,5 @@ export function getFullName(firstName: string, lastName: string): string {
 }
 
 export function greet(name?: string): string {
-    return name != undefined ? `Hello ${name}!` : "Hello!";
+    return name != undefined ? `Hello, ${name}!` : "Hello!";
 }

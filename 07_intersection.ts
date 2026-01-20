@@ -23,4 +23,3 @@ export function createUser(info: HasEmail & HasRole): string {
     return `Utilisateur : ${info.email}, rôle : ${info.role}`;
 }
 
-console.log(createUser({ email: "alice@test.com", role: "admin" }))

@@ -33,5 +33,5 @@ export function formatId(id: number | string): string {
 }
 
 export function getUsername(user: User | null): string {
-    return user === null ? user.username.toUpperCase() : "INVITÉ";
+    return user !== null ? user.username.toUpperCase() : "INVITÉ";
 }
