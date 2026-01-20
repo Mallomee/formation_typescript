@@ -22,10 +22,10 @@ export type HttpMethod = "GET" | "POST" | "PUT" | "DELETE"
 
 export type ApiVersion =  "v1" | "v2"
 
-export type ApiEndpoint = unknown; // Template literal
+export type ApiEndpoint = `/${ApiVersion}/${HttpMethod}`; // Template literal
 
 // TODO: Implémenter la fonction
 
 export function buildEndpoint(version: ApiVersion, method: HttpMethod): ApiEndpoint {
-  throw new Error("Not implemented");
+    return `/${version}/${method}`;
 }

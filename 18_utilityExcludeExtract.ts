@@ -29,15 +29,26 @@
 
 export type Status = "pending" | "approved" | "rejected" | "cancelled"
 
-export type ActiveStatus = unknown; // Utiliser exclure cancelled
+export type ActiveStatus = Exclude<Status, "cancelled">; // Utiliser exclure cancelled
 
-export type FinalStatus = unknown; // uniquement approved ou rejected
-
+export type FinalStatus = Extract<Status, "approved" | "rejected">; // uniquement approved ou rejected
 
 export function canTransition(from: Status, to: Status): boolean {
-  throw new Error("Not implemented");
+    return (from === "pending" &&
+            (to === "approved" || to === "rejected" || to === "cancelled"))
+        || ((from === "approved" || from === "rejected")
+            && to === "cancelled");
 }
 
 export function isFinalStatus(status: Status): boolean {
-  throw new Error("Not implemented");
+    return status === "approved" || status === "rejected";
 }
+
+/*
+console.log(canTransition("pending", "approved"))   // true
+console.log(canTransition("approved", "pending"))   // false
+console.log(canTransition("rejected", "cancelled")) // true
+
+console.log(isFinalStatus("approved"))  // true
+console.log(isFinalStatus("pending"))   // false
+*/
