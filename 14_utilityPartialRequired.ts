@@ -44,3 +44,9 @@ export function updateProfile(profile: UserProfile, updates: Partial<UserProfile
 export function validateCompleteProfile(profile: Partial<UserProfile>): boolean {
     return profile.username !== undefined && profile.email !== undefined && profile.age !== undefined && profile.bio !== undefined;
 }
+
+/*
+const profile = { username: "john", email: "john@test.com", age: 25, bio: "Dev" }
+console.log( updateProfile(profile, { age: 26 }))
+*/
+
