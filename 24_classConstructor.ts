@@ -15,47 +15,51 @@
  */
 
 // TODO: Importer Point de l'exercice précédent
-// import { Point } from './23_classBasic';
+import { Point } from './23_classBasic';
 
 // TODO: Ré-exporter Point pour que les tests puissent l'utiliser
-// export { Point };
+export { Point };
 
 // TODO: Implémenter la classe Rectangle
 
 export class Rectangle {
-  private topLeft: any;
-  private width: any;
-  private height: any;
+  private topLeft: Point;
+  private width: number;
+  private height: number;
 
-  getTopLeft(): any {
-    throw new Error("Not implemented");
+  constructor(topLeft: Point, width: number, height: number) {
+      this.topLeft = topLeft;
+      this.width = width;
+      this.height = height;
   }
 
-  getWidth(): any {
-    throw new Error("Not implemented");
+  getTopLeft(){
+    return this.topLeft;
   }
 
-  getHeight(): any {
-    throw new Error("Not implemented");
+  getWidth(){
+    return this.width;
+  }
+
+  getHeight() {
+    return this.height;
   }
 
   getArea(): any {
-    throw new Error("Not implemented");
+    return this.width * this.height;
   }
 
   getPerimeter(): any {
-    throw new Error("Not implemented");
+    return this.width*2 + this.height*2;
   }
 }
 
-/*
   const point = new Point();
-  point.moveRight();
-  point.moveRight();
+  console.log(point.moveRight());
+  console.log(point.moveRight());
   const rect = new Rectangle(point, 5, 3);
-  rect.getTopLeft().getPosition();  // {x: 2, y: 0}
-  rect.getWidth();                   // 5
-  rect.getHeight();                  // 3
-  rect.getArea();                    // 15
-  rect.getPerimeter();               // 16
-*/
+  console.log(rect.getTopLeft().getPosition());  // {x: 2, y: 0}
+  console.log(rect.getWidth());                   // 5
+  console.log(rect.getHeight());                  // 3
+  console.log(rect.getArea());                    // 15
+  console.log(rect.getPerimeter());               // 16

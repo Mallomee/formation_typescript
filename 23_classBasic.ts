@@ -24,16 +24,16 @@ export class Point {
     }
 
     moveRight(){
-        return this.x+1
+        return this.x++
     }
     moveLeft(){
-        return this.x-1
+        return this.x--
     }
     moveUp(){
-        return this.y+1
+        return this.y++
     }
     moveDown(){
-        return this.y-1
+        return this.y--
     }
     reset(){
         this.x = 0;
@@ -46,15 +46,13 @@ export class Point {
 
 }
 
-/*
 const point = new Point();
-point.getPosition();   // {x: 0, y: 0}
+console.log(point.getPosition());   // {x: 0, y: 0}
 point.moveRight();
-point.getPosition();   // {x: 1, y: 0}
+console.log(point.getPosition());   // {x: 1, y: 0}
 point.moveUp();
-point.getPosition();   // {x: 1, y: 1}
+console.log(point.getPosition());   // {x: 1, y: 1}
 point.reset();
-point.getPosition();   // {x: 0, y: 0}
+console.log(point.getPosition());   // {x: 0, y: 0}
 point.move(5, 3);
-point.getPosition();   // {x: 5, y: 3}
-*/
+console.log(point.getPosition())// {x: 5, y: 3}

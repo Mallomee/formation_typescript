@@ -24,8 +24,19 @@
 
 // TODO: Implémenter la fonction générique
 
-export async function typedFetch(url: string, method: string): Promise<any> {
-  return await fetch(url,{method : method}).catch(err => {
-      throw new Error(err)
-  });
+export async function typedFetch<T>(url: string, method: string): Promise<T> {
+    try {
+        const response = await fetch(url, { method });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error ! Status: ${response.status}`);
+        }
+
+        const data: T = await response.json();
+        return data;
+
+    } catch (error) {
+        console.error("Erreur dans typedFetch :", error);
+        throw error; // On relance pour laisser le caller gérer
+    }
 }
