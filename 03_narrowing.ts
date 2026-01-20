@@ -19,5 +19,5 @@
 // TODO: Implémenter la fonction
 
 export function showUserGroup(user: string, groupName?: string): string {
-    return groupName != undefined ? groupName : "pas de groupe";
+    return groupName !== undefined ? groupName : "pas de groupe";
 }
