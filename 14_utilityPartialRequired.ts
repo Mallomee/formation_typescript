@@ -27,17 +27,20 @@
 // TODO: Définir le type UserProfile
 
 export type UserProfile = {
-  // À compléter
+  username : String;
+  email : String;
+  age : number;
+  bio : String;
 };
 
 // TODO: Implémenter updateProfile
 
-export function updateProfile(profile: any, updates: any): any {
-  throw new Error("Not implemented");
+export function updateProfile(profile: UserProfile, updates: Partial<UserProfile>): UserProfile {
+    return Object.assign(profile, updates);
 }
 
 // TODO: Implémenter validateCompleteProfile
 
-export function validateCompleteProfile(profile: any): any {
-  throw new Error("Not implemented") ;
+export function validateCompleteProfile(profile: Partial<UserProfile>): boolean {
+    return profile.username !== undefined && profile.email !== undefined && profile.age !== undefined && profile.bio !== undefined;
 }

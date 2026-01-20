@@ -26,7 +26,7 @@
 
 // TODO: Définir le type User et implémenter les fonctions
 
-export type User = { username: any };
+export type User = { username: string };
 
 export function formatId(id: number | string): string {
     return typeof id === "number" ? `ID-${id}` : id;

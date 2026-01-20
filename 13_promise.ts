@@ -1,3 +1,4 @@
+// @ts-ignore
 /**
  * Exercice 13: Promise
  *
@@ -17,6 +18,12 @@
 
 // TODO: Implémenter fetchUsername
 
-export async function fetchUsername(userId: number): Promise<any> {
-  throw new Error("Not implemented");
+export async function fetchUsername(userId: number): Promise<string> {
+    let res = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
+
+    if (!res.ok) throw new Error(res.statusText);
+    if (res.status !== 200) throw new Error(res.statusText);
+
+    const data = await res.json();
+    return data.username as string;
 }

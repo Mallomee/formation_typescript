@@ -34,6 +34,6 @@ export function processUnknown(value: unknown): number {
     return typeof value === "string" ? value.length : 0;
 }
 
-export function safeParseNumber(value: any): number | null {
-    return !isNaN(parseInt(value)) ? parseInt(value) : null
+export function safeParseNumber(value: unknown): number | null {
+    return Number(value) !== undefined ? Number(value) : null
 }
