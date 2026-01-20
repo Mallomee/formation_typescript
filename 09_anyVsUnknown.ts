@@ -35,5 +35,12 @@ export function processUnknown(value: unknown): number {
 }
 
 export function safeParseNumber(value: unknown): number | null {
-    return Number(value) !== undefined ? Number(value) : null
+    return Number(value) !== undefined && !isNaN(Number(value)) ? Number(value) : null
 }
+
+console.log(safeParseNumber("42"))
+console.log(safeParseNumber(3.14))
+console.log(safeParseNumber("abc"))
+console.log(safeParseNumber(null))
+console.log(safeParseNumber(0))
+console.log(safeParseNumber([3]))
