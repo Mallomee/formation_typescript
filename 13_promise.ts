@@ -16,23 +16,23 @@
  * Note: Utilisez fetch() ou axios pour effectuer la requête HTTP.
  */
 
-class User {
-    id: number
-    name: string
-    username: string
-    email: string
+type User = {
+    id: number;
+    name: string;
+    username: string;
+    email: string;
     address: {
-        street: string
-        suite: string
-        city: string
-        zipcode: string
+        street: string;
+        suite: string;
+        city: string;
+        zipcode: string;
         geo: {
-            lat: string
-            lng: string
+            lat: string;
+            lng: string;
         }
     }
-    phone: string
-    website: string
+    phone: string;
+    website: string;
     company: {}
 }
 

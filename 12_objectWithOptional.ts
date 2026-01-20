@@ -23,11 +23,11 @@
 export type Book = {
     title : string;
     author : string;
-    publishedYear : number | undefined;
+    publishedYear? : number;
 };
 
 // TODO: Implémenter formatBook
 
-export function formatBook(book: Book): string {
-    return book.publishedYear !== undefined ? `${book.title} par ${book.author} (${book.publishedYear})` : `${book.title} par ${book.author}`;
+export function formatBook(book: Book) {
+    return book.publishedYear ? `${book.title} par ${book.author} (${book.publishedYear})` : `${book.title} par ${book.author}`;
 }
