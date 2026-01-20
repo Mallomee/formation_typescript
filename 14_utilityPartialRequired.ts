@@ -27,10 +27,10 @@
 // TODO: Définir le type UserProfile
 
 export type UserProfile = {
-  username : String;
-  email : String;
-  age : number;
-  bio : String;
+    username : string;
+    email : string;
+    age : number;
+    bio : string;
 };
 
 // TODO: Implémenter updateProfile

@@ -16,7 +16,25 @@
  * Note: Utilisez fetch() ou axios pour effectuer la requête HTTP.
  */
 
-// TODO: Implémenter fetchUsername
+class User {
+    id: number
+    name: string
+    username: string
+    email: string
+    address: {
+        street: string
+        suite: string
+        city: string
+        zipcode: string
+        geo: {
+            lat: string
+            lng: string
+        }
+    }
+    phone: string
+    website: string
+    company: {}
+}
 
 export async function fetchUsername(userId: number): Promise<string> {
     let res = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
@@ -24,6 +42,6 @@ export async function fetchUsername(userId: number): Promise<string> {
     if (!res.ok) throw new Error(res.statusText);
     if (res.status !== 200) throw new Error(res.statusText);
 
-    const data = await res.json();
-    return data.username as string;
+    const data = await res.json() as User;
+    return data.username;
 }

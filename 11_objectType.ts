@@ -17,9 +17,9 @@
 // TODO: Définir le type Car
 
 export type Car = {
-    "brand" : string,
-    "model" : string,
-    "year" : number
+    brand : string;
+    model : string;
+    year : number;
 };
 
 // TODO: Implémenter getCarDescription

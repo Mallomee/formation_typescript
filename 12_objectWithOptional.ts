@@ -21,9 +21,9 @@
 // TODO: Définir le type Book
 
 export type Book = {
-    title : string,
-    author : string,
-    publishedYear : number
+    title : string;
+    author : string;
+    publishedYear : number | undefined;
 };
 
 // TODO: Implémenter formatBook
