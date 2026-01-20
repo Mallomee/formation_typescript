@@ -6,6 +6,7 @@
  *    - `timeout` : number
  *    - `maxRetries` : number
  *
+ *
  * 2. Créer un type `ImmutableConfig` en utilisant Readonly
  *    pour rendre toutes les propriétés non modifiables.
  *
@@ -31,15 +32,17 @@
 // TODO: Définir les types
 
 export type Config = {
-  // À compléter
+    apiUrl: string;
+    timeout: number;
+    maxRetries: number;
 };
 
-export type ImmutableConfig = any;
+export type ImmutableConfig = Readonly<Config>;
 
-export function createConfig(apiUrl: any, timeout: any, maxRetries: any): any {
-  throw new Error("Not implemented");
+export function createConfig(apiUrl: string, timeout: number, maxRetries: number): ImmutableConfig {
+  return {apiUrl, timeout, maxRetries};
 }
 
-export function validateConfig(config: any): any {
-  throw new Error("Not implemented");
+export function validateConfig(config: ImmutableConfig): boolean {
+    return config.timeout > 0 && config.maxRetries > 0;
 }
