@@ -25,5 +25,7 @@
 // TODO: Implémenter la fonction générique
 
 export async function typedFetch(url: string, method: string): Promise<any> {
-  throw new Error("Not implemented");
+  return await fetch(url,{method : method}).catch(err => {
+      throw new Error(err)
+  });
 }

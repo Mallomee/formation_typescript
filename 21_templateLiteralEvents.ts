@@ -31,10 +31,12 @@ export type EventName =  "click" | "focus" | "blur"
 
 export type EventHandler = `on${Capitalize<EventName>}`
 
-export type EventConfig = unknown; // Record avec EventHandler comme clés
+export type EventConfig = {
+    [key in EventHandler] : () => void;
+}; // Record avec EventHandler comme clés
 
 // TODO: Implémenter la fonction
 
 export function createEventHandlers(config: EventConfig): EventConfig {
-  throw new Error("Not implemented");
+    return config;
 }

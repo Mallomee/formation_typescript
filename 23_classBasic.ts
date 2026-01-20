@@ -16,6 +16,34 @@
 // TODO: Implémenter la classe Point
 
 export class Point {
+    private x: number = 0;
+    private y: number = 0;
+
+    getPosition(){
+        return {x: this.x, y: this.y};
+    }
+
+    moveRight(){
+        return this.x+1
+    }
+    moveLeft(){
+        return this.x-1
+    }
+    moveUp(){
+        return this.y+1
+    }
+    moveDown(){
+        return this.y-1
+    }
+    reset(){
+        this.x = 0;
+        this.y = 0;
+    }
+    move(dx, dy){
+        this.x += dx;
+        this.y += dy;
+    }
+
 }
 
 /*
